@@ -7,6 +7,7 @@
   --ink: #f6f0e8;
   --muted: #c9bdb0;
   --accent: #e9c789;
+  --button-gold: #e9c789;
   --panel: #211d19;
   --gold: #dfb879;
   --line: #443a30;
@@ -32,7 +33,7 @@ p + p { margin-top: 1rem; }
 .eyebrow { color: var(--gold); font-weight: 700; font-size: .72rem; letter-spacing: .19em; text-transform: uppercase; margin-bottom: 1rem; }
 .skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 6; background: var(--surface); padding: .6rem; transform: translateY(-200%); }
 .skip-link:focus { transform: none; }
-.button, .menu-toggle { display: inline-flex; align-items: center; justify-content: center; min-height: 47px; padding: .65rem 1.25rem; border: 1px solid var(--accent); border-radius: 3px; background: var(--accent); color: #21190e; font: 700 .85rem/1.35 var(--body); text-align: center; text-decoration: none; cursor: pointer; }
+.button, .menu-toggle { display: inline-flex; align-items: center; justify-content: center; min-height: 47px; padding: .65rem 1.25rem; border: 1px solid var(--button-gold); border-radius: 3px; background: var(--button-gold); color: #21190e; font: 700 .85rem/1.35 var(--body); text-align: center; text-decoration: none; cursor: pointer; }
 .button:hover { background: #f6dbaa; color: #21190e; }
 .button.outline { background: transparent; color: var(--accent); }
 .button.outline:hover { background: var(--panel); }
@@ -136,7 +137,7 @@ figcaption { font-size: .87rem; margin-top: .45rem; color: var(--muted); }
 .form-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .95rem; margin: 1.25rem 0; }
 .wide { grid-column: 1 / -1; }
 label { display: block; color: var(--ink); font-size: .86rem; font-weight: 700; }
-input, select, textarea { display: block; margin-top: .25rem; width: 100%; min-height: 42px; background: #131210; border: 1px solid #72604d; border-radius: 3px; padding: .55rem .65rem; color: var(--ink); font: 400 1rem/1.35 var(--body); }
+input, select, textarea { display: block; margin-top: .25rem; width: 100%; min-height: 42px; background: var(--field-background, #131210); border: 1px solid var(--field-border, #72604d); border-radius: 3px; padding: .55rem .65rem; color: var(--ink); font: 400 1rem/1.35 var(--body); }
 input[type="file"] { font-size: .85rem; }
 textarea { resize: vertical; }
 .optional, small, .form-note { font-size: .8rem; color: var(--muted); font-weight: 400; }
@@ -329,3 +330,23 @@ main :where(p:not(.eyebrow, .testimonial-note, .form-note, .notice), blockquote)
 main p + p { margin-block-start: 1rem; }
 
 .hero-copy > p:not(.eyebrow) { text-align: left; hyphens: none; }
+
+
+/* White sections share a palette for copy, cards and form controls. */
+.section-light {
+  color-scheme: light;
+  --ink: #211b17;
+  --muted: #564b43;
+  --surface: #fcfaf7;
+  --panel: #f5f0e9;
+  --line: #e1d7cb;
+  --accent: #78531e;
+  --gold: #78531e;
+  --field-background: #fff;
+  --field-border: #9c8a7a;
+  background: #fff;
+  color: var(--ink);
+}
+.section-light .pricing-highlight { background: linear-gradient(170deg, #f5ebdb, var(--surface) 64%); }
+.section-light .testimonial { background: linear-gradient(165deg, #f5ebdb, var(--surface) 58%); }
+.section-light :focus-visible { outline-color: var(--accent); }
