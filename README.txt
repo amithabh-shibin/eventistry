@@ -26,3 +26,8 @@ SEO
 Each page has a title and description. robots.txt allows crawling. Once
 you have a domain, replace YOUR-DOMAIN.example in sitemap.xml.example
 and save it as sitemap.xml at the site root.
+
+PHOTO UPDATE
+Card images with "-landscape.webp" in their names have AI-extended surroundings
+to fit the horizontal frames. The full-photo viewer opens the original upload.
+The extended images can include small differences in scene details.
